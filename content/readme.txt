@@ -1,0 +1,1 @@
+public assets/content that should bypass our routing
