@@ -1,0 +1,16 @@
+http://www.example.com/about/company/history.php
+http://www.example.com/about/company/history.php?queryvals=areimportant&somethingelse=true
+
+
+http://www.example.com/content/images/logo.jpg
+
+
+RewriteRule ^/?([a-zA-Z_\/]+).php$ /router.php?route=$1 [L]
+
+
+
+RewriteRule ^/?([a-zA-Z_\/]+)/$ /router.php?route=$1/index [L]
+
+
+
+RewriteRule ^/?([a-zA-Z_\/]+).php$ /router.php?route=$1 [L] [QSA]
