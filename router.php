@@ -1,11 +1,17 @@
 <?php
+namespace MvcEngine\Router {
 
-print "Hello from the router.";
+    use \MvcEngine\Controllers as Controllers;
 
-require_once("MvcEngine/mvcengine.php");
+    print "Hello from the router.";
 
-print "Hello from the router.";
+    print "You are visiting the ".$_GET[route]." route";
 
-print new MvcEngine\Controllers\ExampleController()->ProvideResponseBody();
+    require_once("MvcEngine/mvcengine.php");
 
+    require_once("MvcEngine/Controllers/ExampleController.php");
+    $myController = new Controllers\ExampleController();
+
+    print $myController->ProvideResponseBody();
+}
 ?>

@@ -9,11 +9,11 @@ namespace MvcEngine\Controllers {
 		}
 
 		public function ProvideResponseBody() {
-			var responseBody = parent::ProvideResponseBody();
+			$responseBody = parent::ProvideResponseBody();
 
-			responseBody += "Example Controller Wuz Here.";
+			$responseBody += "Example Controller Wuz Here.";
 
-			return responseBody;
+			return $responseBody;
 		}
 	}
 

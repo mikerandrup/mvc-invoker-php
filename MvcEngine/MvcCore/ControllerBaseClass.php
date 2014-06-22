@@ -10,16 +10,16 @@ namespace MvcEngine\Controllers {
 		}
 
 		// instance property
-		protected $_RequestModel;
+		public $_RequestModel;
 
 		protected function BindModelFromGlobalState() {
-			if (isset(this.$_RequestModelType)) {
+			if (isset($this->_RequestModelType)) {
 				// TODO: Implement a reflection-like walking of the model and retrieve same key values from GET or POST as defined
-				$this->$_RequestModel = new $this->$_RequestModelType();
+				$this->_RequestModel = new $this->_RequestModelType();
 			}
-			else {
-				$this->$_RequestModel = "No request model specified for this controller.";
-			}
+            else {
+                $this->_RequestModel = "No request model specified for this controller.";
+            }
 		}
 
 		protected function CleanseGlobalState() {
@@ -32,10 +32,7 @@ namespace MvcEngine\Controllers {
 		protected $_RequestModelType;
 
 		// "virtual" method ... override? (dunno how in PHP)
-		public function ProvideResponseBody() { return var_dump($this->$_RequestModel); }
+		public function ProvideResponseBody() { return var_dump($this->_RequestModel); }
 	}
 }
-
-// TODO: Is there a better way than taking this dependency upon the base class?
-require_once("../Controllers/ExampleController.php");
 ?>

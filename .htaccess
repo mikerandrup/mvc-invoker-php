@@ -1,2 +1,4 @@
-RewriteRule ^/content/?([a-zA-Z_\/]+) /content/$1 [L]
-RewriteRule ^/?([a-zA-Z_\/]+).php$ /router.php?route=$1&$2 [QSA]
+	RewriteEngine On
+	RewriteCond  %{REQUEST_URI} !^/content/
+	RewriteCond  %{REQUEST_URI} !^/router.php
+	RewriteRule ^/?(.*).php$ /router.php?route=$1& [QSA]
